@@ -29,39 +29,68 @@
     @keyframes pulse{50%{transform:scale(1.04);box-shadow:0 0 0 9px rgba(200,166,106,.04)}}
     .reveal{animation:reveal .8s cubic-bezier(.2,.8,.2,1) both}
     @keyframes reveal{from{opacity:0;transform:scale(.96) translateY(14px)}to{opacity:1;transform:none}}
+
     .ticket-wrap{width:min(100%,430px)}
     .ticket{
-      position:relative;background:var(--paper);border-radius:20px;box-shadow:0 28px 80px rgba(0,0,0,.35);
-      overflow:hidden;
+      position:relative;background:var(--paper);box-shadow:0 28px 80px rgba(0,0,0,.35);
+      overflow:hidden;border-radius:4px;
     }
-    .ticket:before,.ticket:after{content:"";position:absolute;z-index:2;width:24px;height:24px;background:#2b1a21;border-radius:50%;top:118px}
-    .ticket:before{left:-12px}.ticket:after{right:-12px}
-    .ticket-top{padding:30px 28px 26px;text-align:center;background:linear-gradient(135deg,#fffaf4,#f8eee8)}
-    .mini{font-size:.67rem;letter-spacing:.18em;text-transform:uppercase;color:#a27f53}
-    .ticket-title{font-size:1.55rem;line-height:1.1;margin:10px 0 5px;font-weight:400}
-    .couple{font-size:.78rem;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
-    .tear{border-top:2px dashed #dccac0;margin:0 22px}
-    .ticket-body{padding:26px 28px 30px}
+    .ticket:before,.ticket:after{
+      content:"";position:absolute;z-index:4;width:26px;height:26px;
+      background:#2b1a21;border-radius:50%;top:126px;
+    }
+    .ticket:before{left:-13px}.ticket:after{right:-13px}
+    .ticket-top{
+      position:relative;padding:24px 28px 27px;text-align:center;
+      background:linear-gradient(145deg,#fffdf9,#f4e7df);
+      border-bottom:0;
+    }
+    .ticket-top:after{
+      content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;
+      background:repeating-linear-gradient(90deg,#dccac0 0 7px,transparent 7px 13px);
+    }
+    .cinema-mark{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:12px}
+    .cinema-mark:before,.cinema-mark:after{content:"";height:1px;width:42px;background:#c8a66a}
+    .mini{font-size:.67rem;letter-spacing:.22em;text-transform:uppercase;color:#a27f53;font-weight:bold}
+    .ticket-title{font-size:1.8rem;line-height:1.08;margin:8px 0 7px;font-weight:400}
+    .couple{font-size:.72rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+    .ticket-number{margin-top:15px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.62rem;letter-spacing:.2em;color:#a58c83}
+
+    .ticket-body{padding:28px 28px 22px}
+    .admit{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;padding-bottom:15px;border-bottom:1px solid var(--line)}
+    .admit-label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+    .admit-value{font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:#8d5261;font-weight:bold}
     .row{display:grid;grid-template-columns:28px 1fr;gap:10px;margin:0 0 17px;align-items:start}
     .icon{font-family:system-ui;font-size:1.05rem}
     .label{font-size:.74rem;color:var(--muted);display:block;margin-bottom:2px}
     .value{font-size:1rem;line-height:1.35}
-    .message{margin:22px 0 24px;padding:18px;border:1px solid var(--line);border-radius:14px;background:#fffdfa;line-height:1.6;font-size:.95rem}
+    .message{margin:22px 0 24px;padding:18px;border:1px solid var(--line);border-radius:4px;background:#fffdfa;line-height:1.6;font-size:.95rem}
     .message strong{font-weight:normal;color:#8d5261}
-    .code-box{margin:0 0 16px;padding:18px;border:1px solid var(--line);border-radius:14px;background:#fffdfa;text-align:center}
+    .code-box{margin:0 0 16px;padding:18px;border:1px solid var(--line);border-radius:4px;background:#fffdfa;text-align:center}
     .code-label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
-    .code-value{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:1.05rem;letter-spacing:.08em;font-weight:600;word-break:break-all;padding:11px 8px;background:#f6eee8;border-radius:9px;color:#3a272d}
-    .copy-btn{margin-top:10px;border:1px solid #d8c5bc;background:transparent;color:#62464f;border-radius:9px;padding:9px 14px;cursor:pointer;font-size:.78rem}
+    .code-value{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:1.05rem;letter-spacing:.08em;font-weight:600;word-break:break-all;padding:11px 8px;background:#f6eee8;border-radius:2px;color:#3a272d}
+    .copy-btn{margin-top:10px;border:1px solid #d8c5bc;background:transparent;color:#62464f;border-radius:4px;padding:9px 14px;cursor:pointer;font-size:.78rem}
     .copy-btn:active{transform:translateY(1px)}
     .copy-hint{font-size:.74rem;color:#927f83;margin-top:11px;line-height:1.4}
-    .redeem{width:100%;margin-top:0;border:0;border-radius:11px;padding:14px;background:#2c1d22;color:#fff;cursor:pointer;letter-spacing:.04em}
+    .redeem{width:100%;margin-top:0;border:0;border-radius:4px;padding:14px;background:#2c1d22;color:#fff;cursor:pointer;letter-spacing:.04em}
     .redeem:active{transform:translateY(1px)}
     .fine{font-size:.7rem;color:#927f83;text-align:center;margin:12px 4px 0;line-height:1.45}
+
+    .ticket-footer{
+      position:relative;padding:18px 28px 21px;border-top:2px dashed #dccac0;
+      background:#f7eee8;text-align:center;
+    }
+    .ticket-footer:before,.ticket-footer:after{
+      content:"";position:absolute;top:-14px;width:26px;height:26px;background:#2b1a21;border-radius:50%;
+    }
+    .ticket-footer:before{left:-13px}.ticket-footer:after{right:-13px}
+    .barcode{height:30px;width:180px;margin:0 auto 10px;opacity:.55;background:repeating-linear-gradient(90deg,#3a272d 0 2px,transparent 2px 5px,#3a272d 5px 6px,transparent 6px 9px,#3a272d 9px 12px,transparent 12px 15px)}
+    .barcode-label{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.55rem;letter-spacing:.22em;color:#8f7b76}
     .footer{text-align:center;color:#dcc8c0;font-size:.7rem;margin-top:18px;letter-spacing:.06em}
     .sparkle{position:absolute;inset:0;pointer-events:none}
     .sparkle i{position:absolute;width:3px;height:3px;background:#e5cfa4;border-radius:50%;opacity:.6;animation:float 5s linear infinite}
     @keyframes float{from{transform:translateY(10vh);opacity:0}20%{opacity:.6}90%{opacity:.15}to{transform:translateY(-100vh);opacity:0}}
-    @media(max-width:380px){.screen{padding:16px}.ticket-top{padding:25px 22px 22px}.ticket-body{padding:23px 22px 25px}}
+    @media(max-width:380px){.screen{padding:16px}.ticket-top{padding:22px 22px 25px}.ticket-body{padding:25px 22px 20px}.ticket-footer{padding-left:22px;padding-right:22px}}
   </style>
 </head>
 <body>
@@ -92,12 +121,14 @@
       <div class="ticket-wrap reveal">
         <article class="ticket" aria-label="Biglietto regalo cinema">
           <header class="ticket-top">
-            <div class="mini">Cinema</div>
+            <div class="cinema-mark"><div class="mini">Cinema</div></div>
             <div class="ticket-title">“Divano e copertina”</div>
             <div class="couple">Couple Edition</div>
+            <div class="ticket-number">TICKET · 039 · COUPLE</div>
           </header>
-          <div class="tear"></div>
+
           <div class="ticket-body">
+            <div class="admit"><span class="admit-label">Ingresso valido</span><span class="admit-value">365 giorni · da oggi</span></div>
             <div class="row"><div class="icon">🍿</div><div><span class="label">Titolo</span><span class="value">Il prossimo film lo scegli tu</span></div></div>
             <div class="row"><div class="icon">👩‍❤️‍👨</div><div><span class="label">Spettatori</span><span class="value">2</span></div></div>
             <div class="row"><div class="icon">🎟️</div><div><span class="label">Ingresso</span><span class="value">365 giorni</span></div></div>
@@ -119,6 +150,11 @@
             <button class="redeem" type="button" id="redeemBtn">Riscatta il regalo</button>
             <p class="fine">Ora il regalo è tutto tuo. ❤️</p>
           </div>
+
+          <footer class="ticket-footer" aria-hidden="true">
+            <div class="barcode"></div>
+            <div class="barcode-label">039 · COUPLE · 365</div>
+          </footer>
         </article>
         <div class="footer">Fatto apposta per te · ♥</div>
       </div>
